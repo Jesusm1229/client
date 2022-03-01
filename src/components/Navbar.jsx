@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import logo from "../../images/logo.png";
 
+//componente dinámico
 const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
 );
@@ -21,15 +22,15 @@ const Navbar = () => {
           <NavBarItem key={item + index} title={item} />
         ))}
         <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
-          Login
+          Iniciar Sesión
         </li>
       </ul>
       {/**Vista móvil */}
       <div className="flex relative">
-        {!toggleMenu && (
+        {!toggleMenu && ( //Menú cerrado
           <HiMenuAlt4 fontSize={28} className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(true)} />
         )}
-        {toggleMenu && (
+        {toggleMenu && ( //Cuando toggleMenu true
           <AiOutlineClose fontSize={28} className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(false)} />
         )}
         {toggleMenu && (
